@@ -1,0 +1,53 @@
+import accesorios.*
+import bicis.*
+import depositos.*
+
+test "Depósito con tres bicicletas" {
+	/*Creación de Instancia, configuración y agregado de accesorio a primera bici*/
+	const bici1 = new Bicicleta()
+	
+	bici1.rodado(28)
+	bici1.largo(150)
+	bici1.marca("Olmo")
+	
+	/*Creación de Instancias, configuración y agregado de accesorios a la segunda bici*/
+	const bici2 = new Bicicleta()
+	const canasto1 = new Canasto()
+	const morral_1 = new Morral()
+
+	bici2.rodado(26)
+	bici2.largo(110)
+	bici2.marca("Legnano")
+	bici2.agregarAccesorio(farolito)
+	canasto1.volumen(8)
+	morral_1.largo(21)
+	morral_1.tieneOjoDeGato(true)
+	bici2.agregarAccesorio(canasto1)
+	bici2.agregarAccesorio(morral_1)
+	
+	/*Creación de Instancias, configuración y agregado de accesorios a la tercera bici*/
+	const bici3 = new Bicicleta()
+	const morral_2 = new Morral()
+	
+	bici3.rodado(20)
+	bici3.largo(90)
+	bici3.marca("Legnano")
+	morral_2.largo(6)
+	morral_2.tieneOjoDeGato(false)
+	bici3.agregarAccesorio(morral_2)
+	
+	/*Creación de la instancia del Depósito y agregado de bicicletas*/
+	const deposito1 = new Deposito()
+	
+	deposito1.agregarBici(bici1)
+	deposito1.agregarBici(bici2)
+	deposito1.agregarBici(bici3)
+	
+	/*Tests al deposito1*/
+	assert.equals([bici1, bici2], deposito1.bicisRapidas())
+	assert.equals(#{"Olmo", "Legnano"}, deposito1.marcasDeBicis())
+	assert.notThat(deposito1.esNocturno())
+	assert.that(deposito1.puedeLlevar(10))
+	assert.notThat(deposito1.puedeLlevar(50))
+
+}

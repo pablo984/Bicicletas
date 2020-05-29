@@ -1,0 +1,65 @@
+import accesorios.*
+import bicis.*
+import depositos.*
+
+
+test "Más consultas a un depósito" {
+	/*Creación de Instancia, configuración y agregado de accesorio a 1ra bici*/
+	const bici1 = new Bicicleta()
+	
+	bici1.rodado(28)
+	bici1.largo(150)
+	bici1.marca("Olmo")
+	
+	/*Creación de Instancias, configuración y agregado de accesorios a la 2da bici*/
+	const bici2 = new Bicicleta()
+	const canasto1 = new Canasto()
+	const morral_1 = new Morral()
+
+	bici2.rodado(26)
+	bici2.largo(110)
+	bici2.marca("Legnano")
+	bici2.agregarAccesorio(farolito)
+	canasto1.volumen(8)
+	morral_1.largo(21)
+	morral_1.tieneOjoDeGato(true)
+	bici2.agregarAccesorio(canasto1)
+	bici2.agregarAccesorio(morral_1)
+	
+	/*Creación de Instancias, configuración y agregado de accesorios a la 3ra bici*/
+	const bici3 = new Bicicleta()
+	const morral_2 = new Morral()
+	
+	bici3.rodado(27)
+	bici3.largo(180)
+	bici3.marca("Venzo")
+	morral_2.largo(6)
+	morral_2.tieneOjoDeGato(false)
+	bici3.agregarAccesorio(morral_2)
+	bici3.agregarAccesorio(farolito)
+	
+	/*Creación de Instancias, configuración y agregado de accesorios a la 4ta bici*/
+	const bici4 = new Bicicleta()
+	const morral_3 = new Morral()
+	
+	bici4.rodado(29)
+	bici4.largo(200)
+	bici4.marca("Raleigh")
+	morral_3.largo(18)
+	morral_3.tieneOjoDeGato(true)
+	bici4.agregarAccesorio(morral_3)
+	
+	/*Creación de la instancia del Depósito y agregado de bicicletas*/
+	const deposito1 = new Deposito()
+	
+	deposito1.agregarBici(bici1)
+	deposito1.agregarBici(bici2)
+	deposito1.agregarBici(bici3)
+	deposito1.agregarBici(bici4)
+	
+	/*Tests al deposito1*/
+	assert.equals("Raleigh", deposito1.marcaDeLaBiciMasRapida())
+	assert.equals(8, deposito1.cargaTotalDeBicisLargas())
+	assert.equals(1, deposito1.bicisSinAccesorios())
+	
+}

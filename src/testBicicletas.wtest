@@ -1,0 +1,64 @@
+import accesorios.*
+import bicis.*
+
+
+test "3 bicis con sus accesorios" {
+	/*Cración de Instancia, configuración y agregado de accesorio a 1ra bici*/
+	const bici1 = new Bicicleta()	
+	
+	bici1.rodado(28)
+	bici1.largo(150)
+	bici1.marca("Olmo")
+	bici1.agregarAccesorio(farolito)
+	
+	/*Creación de Instancias, configuración y agregado de accesorio a la 2da bici*/
+	const bici2 = new Bicicleta()
+	const canasto1 = new Canasto()
+	const morral_1 = new Morral()
+	
+	bici2.rodado(26)
+	bici2.largo(110)
+	bici2.marca("Legnano")
+	bici2.agregarAccesorio(farolito)
+	canasto1.volumen(8)
+	morral_1.largo(21)
+	morral_1.tieneOjoDeGato(true)
+	bici2.agregarAccesorio(canasto1)
+	bici2.agregarAccesorio(morral_1)
+	
+	/*Creación de instancias, configuración y agregado de accesorios a la 3ra bici*/
+	const bici3 = new Bicicleta()
+	const morral_2 = new Morral()
+	
+	bici3.rodado(20)
+	bici3.largo(90)
+	bici3.marca("Legnano")
+	morral_2.largo(6)
+	morral_2.tieneOjoDeGato(false)
+	bici3.agregarAccesorio(morral_2)
+	
+	/*Tests a las 1ra bicicleta*/
+	assert.equals(85, bici1.altura())	
+	assert.equals(34, bici1.velocidadCrucero())
+	assert.equals(0, bici1.carga())
+	assert.equals(14.5, bici1.peso())
+	assert.that(bici1.tieneLuz())
+	assert.equals(1, bici1.accesoriosLivianos())
+	
+	/*Tests a la 2da bicicleta*/
+	assert.equals(80, bici2.altura())
+	assert.equals(28, bici2.velocidadCrucero())
+	assert.equals(15.5, bici2.peso())
+	assert.equals(23, bici2.carga())
+	assert.that(bici2.tieneLuz())
+	assert.equals(2, bici2.accesoriosLivianos())
+	
+	/*Tests a la 3ra bicicleta*/
+	assert.equals(65, bici3.altura())
+	assert.equals(22, bici3.velocidadCrucero())
+	assert.equals(2, bici3.carga())
+	assert.equals(11.2, bici3.peso())
+	assert.notThat(bici3.tieneLuz())
+	assert.equals(0, bici3.accesoriosLivianos())
+
+}
