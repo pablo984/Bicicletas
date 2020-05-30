@@ -47,8 +47,8 @@ class Deposito {
 	method largosMenoresA10De(unaBici) {
 		return bicicletas.filter({ bici => ((bici.largo() - unaBici.largo()).abs()) <= 10 })
 	}
-	method bicisCompanieras(unaBici) {
-		
+	method bicisCompanierasDe(unaBici) {
+		return bicicletas.filter({ bici => bici.esCompanieraDe(unaBici) })
 	}
 
 }

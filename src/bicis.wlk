@@ -12,6 +12,7 @@ class Bicicleta {
 	method quitarAccesorio(unAccesorio) {
 		accesorios.remove(unAccesorio)
 	}
+	/*Método adicional*/
 	method tieneAccesorios() {
 		return not accesorios.isEmpty()
 	}
@@ -35,6 +36,10 @@ class Bicicleta {
 	}
 	method accesoriosLivianos() {
 		return accesorios.count({ acc => acc.peso() < 1 })
+	}
+	/*Método Adicional*/
+	method esCompanieraDe(unaBici) {
+		return ((self.largo() - unaBici.largo()).abs() <= 10 and self.marca() == unaBici.marca()) 
 	}
 }
 
