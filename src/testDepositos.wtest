@@ -3,14 +3,14 @@ import bicis.*
 import depositos.*
 
 test "Depósito con tres bicicletas" {
-	/*Creación de Instancia, configuración y agregado de accesorio a primera bici*/
+	/*Creación de Instancia, configuración y agregado de accesorio a 1ra bici*/
 	const bici1 = new Bicicleta()
 	
 	bici1.rodado(28)
 	bici1.largo(150)
 	bici1.marca("Olmo")
 	
-	/*Creación de Instancias, configuración y agregado de accesorios a la segunda bici*/
+	/*Creación de Instancias, configuración y agregado de accesorios a la 2da bici*/
 	const bici2 = new Bicicleta()
 	const canasto1 = new Canasto()
 	const morral_1 = new Morral()
@@ -25,7 +25,7 @@ test "Depósito con tres bicicletas" {
 	bici2.agregarAccesorio(canasto1)
 	bici2.agregarAccesorio(morral_1)
 	
-	/*Creación de Instancias, configuración y agregado de accesorios a la tercera bici*/
+	/*Creación de Instancias, configuración y agregado de accesorios a la 3ra bici*/
 	const bici3 = new Bicicleta()
 	const morral_2 = new Morral()
 	

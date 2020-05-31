@@ -45,7 +45,8 @@ class Morral {
 
 /*Todo objeto autodefinido y/o clase de un accesorio que agregue, debe respetar el contrato
  de los otros objetos, es decir, tienen que ser polimórficos. Todos los objetos y/o clase 
- nueva que agregue, debe tener un peso, una carga e indicar si es luminoso o no. */
+ nueva que agregue, debe tener un peso, una carga e indicar si es luminoso o no. No hay que
+ tocar nada de los otros objetos.*/
  
 
 

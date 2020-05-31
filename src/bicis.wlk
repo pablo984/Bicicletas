@@ -37,7 +37,9 @@ class Bicicleta {
 	method accesoriosLivianos() {
 		return accesorios.count({ acc => acc.peso() < 1 })
 	}
-	/*Método Adicional*/
+	/*Método Adicional. Si bien el método funciona para comparar dos bicis, o para colocarlo dentro del 
+	  bloque de "bicisCompanierasDe(unaBici) y comparar unaBici con todas y c/u de las bicis de una
+	  colección, lamentablemente NO pude lograr el objetivo de que "una bici no es compañera de si misma.*/
 	method esCompanieraDe(unaBici) {
 		return ((self.largo() - unaBici.largo()).abs() <= 10 and self.marca() == unaBici.marca()) 
 	}
