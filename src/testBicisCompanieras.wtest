@@ -4,12 +4,6 @@ import depositos.*
 
 test "Bicis compañeras de marca y su largos no difieren en más de 10 cm" {
 	
-	/*NOTA: en éste test, no se logró el objetivo de que una bici no sea compañera de si misma, 
-	        por lo tanto, doy por sentado de que el ejercicio está mal. No obstante, realizo el 
-	        test de todas formas para que el lector vea los "intentos" realizados y que, al menos,
-	        el código funciona de forma parcial.*/
-	 
-	
 	/*Creación de las instancias de Bicicleta*/
 	const bici1 = new Bicicleta(rodado=28, largo=180, marca="Venzo", accesorios=[farolito])
 	const bici2 = new Bicicleta(rodado=29, largo=190, marca="Raleigh")
@@ -23,6 +17,7 @@ test "Bicis compañeras de marca y su largos no difieren en más de 10 cm" {
 	assert.that(bici4.esCompanieraDe(bici6))
 	assert.notThat(bici3.esCompanieraDe(bici4))
 	assert.that(bici2.esCompanieraDe(bici5))
+	assert.notThat(bici1.esCompanieraDe(bici1))
 	
 	/*Creación de la instancia del Depósito y agregado de bicicletas*/
 	const deposito1 = new Deposito()
@@ -35,5 +30,6 @@ test "Bicis compañeras de marca y su largos no difieren en más de 10 cm" {
 	
 	/*Test aplicado entre una bicicleta y una colección de bicicletas*/
 	assert.equals([bici4], deposito1.bicisCompanierasDe(bici6))
+	
 	
 }

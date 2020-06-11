@@ -42,15 +42,6 @@ class Deposito {
 	method bicisCompanierasDe(unaBici) {
 		return bicicletas.filter({ bici => bici.esCompanieraDe(unaBici) })
 	}
-	
-	
-	/*Estos 2 métodos adicionales no se usan, pero los dejo porque fueron los primeros que relicé
-	  a modo de prueba, para intentar llegar a la solución de "bicisCompanierasDe(unBici)" */
-	method mismaMarcaQue(unaBici) {
-		return bicicletas.filter({ bici => bici.marca() == unaBici.marca() })
-	}
-	method largosMenoresA10De(unaBici) {
-		return bicicletas.filter({ bici => ((bici.largo() - unaBici.largo()).abs()) <= 10 })
-	}
+
 
 }
